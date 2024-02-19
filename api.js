@@ -2,25 +2,24 @@ const express = require("express");
 const app = express();
 module.exports = app;
 app.use(express.json());
+const PORT = 4000;
 
-//importando as classes
-const {DiceRoll, BasicDiceRoll, DiceRollDecorator} = require("./Decorator");
+const {BasicDiceRoll} = require("./Decorator");
 const {Territorio} = require("./Territorios");
 
 const  territorio1 = new Territorio("Yuri");
 const  territorio2 = new Territorio("Cesar");
-const  territorio3 = new Territorio("Cilva");
-const  territorio4 = new Territorio("Cantos");
+const  territorio3 = new Territorio("Silva");
+const  territorio4 = new Territorio("Santos");
 
-//array de classes pré instânciadas
 var DB = [territorio1, territorio2, territorio3, territorio4];
 
-//Retornar todos dados do array
+//localhost:4000/territorios
 app.get('/territorios', (req, res) => {
     res.status(200).json(DB);
 });
 
-//Add tropas para player e território específico
+//localhost:4000/territorios/Cesar/1/3
 app.get('/territorios/:dono/:idterritorio/:qtdtropas', (req, res) => {
     const indice = parseInt(req.params.idterritorio);
     const val = parseInt(req.params.qtdtropas);
@@ -31,16 +30,13 @@ app.get('/territorios/:dono/:idterritorio/:qtdtropas', (req, res) => {
 });
 
 
-
-
-// Rota para lidar com o lançamento de dados
+// localhost:4000/roll
 app.get('/roll', (req, res) => {
     const basicRoll = new BasicDiceRoll();
-    const resultado_dados = basicRoll.roll();
-    res.json({ resultado_dados });
+    res.json({Numero: basicRoll.roll()});
 });
 
-// Inicializa o servidor
-app.listen(4000, () => {
-    console.log(`Servidor rodando em http://localhost:${4000}`);
+
+app.listen(PORT, () => {
+    console.log(`Servidor rodando em http://localhost:${PORT}`);
 });

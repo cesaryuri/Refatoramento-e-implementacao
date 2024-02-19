@@ -1,5 +1,3 @@
-//Eu como usuário, quero lançar os dados para defender os meus territórios//
-
 // Interface para os lançamentos de dados
 class DiceRoll {
     roll() {
@@ -10,7 +8,7 @@ class DiceRoll {
 // Implementação concreta da classe de lançamento de dados
 class BasicDiceRoll extends DiceRoll {
     roll() {
-        return Math.floor(Math.random() * 6) + 1; // Simula o lançamento de um dado de 6 faces
+        return Math.floor(Math.random() * 6) + 1;
     }
 }
 
@@ -27,10 +25,4 @@ class DiceRollDecorator extends DiceRoll {
 }
 
 
-// Exemplo de uso
-const basicRoll = new BasicDiceRoll();
-console.log("Lançamento básico:", basicRoll.roll());
-
-
-
-module.exports={DiceRoll, BasicDiceRoll, DiceRollDecorator};
+module.exports={BasicDiceRoll};

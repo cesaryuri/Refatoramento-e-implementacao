@@ -1,0 +1,29 @@
+CodeSmall
+
+1 - Comentários desnecessários
+Ex: 
+// Rota para lidar com o lançamento de dados
+// Inicializa o servidor
+// Eu como usuário, quero lançar os dados para defender os meus territórios
+
+2 - Exportação e importação desnecessária de algumas classes
+Ex:
+DiceRoll, DiceRollDecorator
+module.exports = { DiceRoll, BasicDiceRoll, DiceRollDecorator };
+const {DiceRoll, BasicDiceRoll, DiceRollDecorator} = require("./Decorator");
+
+3 - Execução do método roll diretamente no resposta da requisição
+// localhost:4000/roll
+app.get('/roll', (req, res) => {
+    const basicRoll = new BasicDiceRoll();
+    res.json({Numero: basicRoll.roll()});
+});
+
+
+4 - Remoção de inicialização desnecessária da classe 
+// Exemplo de uso
+const basicRoll = new BasicDiceRoll();
+console.log("Lançamento básico:", basicRoll.roll());
+
+5 - Uso de uma variável para armazenar a porta
+const PORT = 4000;

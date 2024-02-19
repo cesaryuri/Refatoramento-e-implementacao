@@ -5,8 +5,8 @@ class Territorio {
         this.text = "";
     }
 
-    adicionar(jogadorDono, tropas) {
-        if (jogadorDono == this.dono) {
+    adicionar(jogador_que_adiciona, tropas) {
+        if (jogador_que_adiciona == this.dono) {
             this.qtd_tropas_territorio += tropas;
             this.text = "Tropas adicionadas com sucesso"
         } else {

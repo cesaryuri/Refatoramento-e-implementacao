@@ -36,9 +36,9 @@ Este código permite o lançamento de dados, adicionar tropas aos territorios e 
    Abra o seu navegador ou postman e digite o seguinte endereço para listar todos os territórios para cada player disponiveis através de uma requisição get:
 
   ```
-  http://localhost:4000/territorios
+  localhost:4000/territorios
   ```
-   Para adicionar tropas aos 4 territorios disponíveis dos donos "Cesar, Yuri, Silva, Santos" de posições 0, 1, 2, 3 digite:
+   Para adicionar tropas aos 4 territorios disponíveis dos donos "Cesar, Yuri, Silva, Santos" de posições 0, 1, 2, 3 onde primeiro parâmetro é o nome, o segundo é a posição do array que está o território e o terceiro a quantidade que deseja adicionar, digite:
   
   ```
   localhost:4000/territorios/Cesar/1/3

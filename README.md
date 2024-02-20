@@ -24,7 +24,7 @@ Este código permite o lançamento de dados, adicionar tropas aos territorios e 
 - Clone o repisitório
   
    ```
-   git clone https://github.com/cesaryuri/WAR_API_STRATEGY.git
+   git clone https://github.com/cesaryuri/Refatoramento-e-implementacao.git   
    ```
 - Execute o servidor
     Abra o terminal do vscode na pasta do projeto e digite:

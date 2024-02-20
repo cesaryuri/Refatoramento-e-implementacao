@@ -46,6 +46,5 @@ Este código permite o lançamento de dados, adicionar tropas aos territorios e 
   ## 💻 Links
 - Link para explicação do que fiz:
 
-  ```
   https://youtu.be/zbKftfv0_-I
-  ```  
+    

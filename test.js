@@ -1,7 +1,7 @@
 const request = require('supertest');
 const app = require('./api'); 
 
-describe('Testando API de lançamento de dados', () => {
+describe('Testando API de lançamento', () => {
     it('Deve simular um lançamento básico de dados', async () => {
         const response = await request(app).get('/roll');
         expect(response.status).toBe(200);
